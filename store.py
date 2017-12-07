@@ -9,13 +9,9 @@ import argparse, sys, os, json, tempfile
 parser = argparse.ArgumentParser(description='Store.')
 parser.add_argument("--key")
 parser.add_argument("--val")
-
 params = vars(parser.parse_args())
 
-#print(params)
-
 storage_path = os.path.join(tempfile.gettempdir(), 'storage.data')
-
 if not os.path.isfile(storage_path):
     #print("Пидарасы, где файл?!")
     dict_is_empty = True
@@ -27,8 +23,6 @@ else:
 
 if params["val"]:
     #print("Бля, это добавление нового слова!")
-    #print(dict_is_empty)
-
     if dict_is_empty:
         jdict = {}
     else:
@@ -49,10 +43,6 @@ else:
     else:
         with open(storage_path, 'r') as f:
             jdict = json.load(f)
-            #print(jdict)
-            #print(params["key"])
-            #print(params["val"])
-            #print(params["key"] in jdict)
             if params["key"] in jdict:
                 testvar = jdict[params["key"]]
                 result = ""
