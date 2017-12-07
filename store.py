@@ -1,3 +1,9 @@
+"""
+Мы с вами реализуем собственный key-value storage.
+Вашей задачей будет написать скрипт, который принимает в качестве аргументов ключи и значения
+и выводит информацию из хранилища (в нашем случае — из файла)
+"""
+
 import argparse, sys, os, json, tempfile
 
 parser = argparse.ArgumentParser(description='Store.')
